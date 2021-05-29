@@ -44,7 +44,7 @@ export class CreateAccount extends Component {
     return (
       <Grommet theme={theme} full>
         <AppBar>
-          <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>HMS</Heading></a>
+          <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>BookMyVaccine</Heading></a>
         </AppBar>
         <Box fill align="center" justify="top">
           <Box width="medium">

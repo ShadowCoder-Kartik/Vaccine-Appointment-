@@ -42,7 +42,7 @@ const SidebarButtons = () => {
     <Grommet full theme={theme}>
       <Box fill direction="row">
         <Box background="brand">
-          {["View Medical History", "View Appointments", "Schedule Appointment","Book Vaccine", "Settings", "Sign Out"].map(label => (
+          {["View Medical History", "View Appointments", "Schedule Appointment", "Settings", "Sign Out"].map(label => (
             <SidebarButton
               key={label}
               label={label}
@@ -51,9 +51,7 @@ const SidebarButtons = () => {
                 if (label === "Schedule Appointment") {
                   window.location = "/scheduleAppt"
                 }
-                else if (label === "Book Vaccine") {
-                  window.location = "/scheduleAppt"
-                }
+                
                 else if (label === "Sign Out") {
                   fetch("http://localhost:3001/endSession");
                   window.location = "/"
@@ -143,6 +141,12 @@ export class Home extends Component {
                 </Heading>
                 
                 <img src="/images/logo.png" height="300px" alt=""></img>
+                <h3>
+                  Total no. of Covid19 +ve Patients(India): 
+                  </h3> 
+                <h3>
+                Total no. of Deaths(India): 
+                </h3>
               </Box>
             </Box>
           </Grid>

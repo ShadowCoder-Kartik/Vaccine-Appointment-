@@ -283,6 +283,7 @@ export class SchedulingAppt extends Component {
                   fetch("http://localhost:3001/checkIfApptExists?email=" + email_in_use + "&startTime=" + theTime + "&date=" + theDate + "&docEmail=" + theDoc)
                     .then(res => res.json())
                     .then(res => {
+                      console.log(res)
                       if ((res.data[0])) {
                         window.alert("Appointment Clash! Try another doctor or date/time");
                       } else {
