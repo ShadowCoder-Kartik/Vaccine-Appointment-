@@ -8,6 +8,7 @@ import Home from './Home';
 import LogIn from './logIn.js';
 import CreateAccount from './CreateAccount.js';
 import SchedulingAppt from './schedulingAppt.js';
+import Bookvac from './bookvac';
 import ViewMedHist from './ViewMedHist.js';
 import DocHome from './DocHome.js';
 import ViewOneHistory from './ViewOneHistory.js';
@@ -61,6 +62,9 @@ export default function App() {
           </Route>
           <Route path="/scheduleAppt">
             <SchedulingAppt />
+          </Route>
+          <Route path="/bookvac">
+            <Bookvac/>
           </Route>
           <Route path="/showDiagnoses/:id" render={props=><ShowDiagnoses {...props} />} />
           <Route path="/Diagnose/:id" render={props=><Diagnose {...props} />} />
