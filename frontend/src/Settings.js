@@ -44,7 +44,7 @@ export class Settings extends Component {
             <Grommet theme={theme} full>
                 <Box >
                     <AppBar>
-                    <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>BookMyVaccine</Heading></a>
+                    <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>EZClinic</Heading></a>
                     </AppBar>
                     <Box pad="small">
                     <Form

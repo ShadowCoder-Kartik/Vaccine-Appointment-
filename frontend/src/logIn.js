@@ -57,7 +57,7 @@ class LogIn extends Component {
       <div style={{ backgroundImage: `url(${background})` , height:"800px" }}>
       <Grommet theme={theme} full>
         <AppBar>
-        <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>BookMyVaccine</Heading></a>
+        <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>EZClinic</Heading></a>
         </AppBar>
 
         <Box

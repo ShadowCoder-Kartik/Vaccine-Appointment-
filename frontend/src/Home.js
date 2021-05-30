@@ -104,7 +104,7 @@ export class Home extends Component {
         style={{borderBottom:"1px solid grey"}}
       >
         
-        <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>BookMyVaccine</Heading></a>
+        <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>EZClinic</Heading></a>
         
       </Box>
       
@@ -145,10 +145,10 @@ export class Home extends Component {
                 
                 <img src="/images/logo.png" height="300px" alt=""></img>
                 <h3>
-                  Total no. of Covid19 +ve Patients(India): 
+                  Total no. of Covid Cases in India:  27,893,472
                   </h3> 
                 <h3>
-                Total no. of Deaths(India): 
+                Total no. of Deaths(India): 325,998
                 </h3>
               </Box>
             </Box>

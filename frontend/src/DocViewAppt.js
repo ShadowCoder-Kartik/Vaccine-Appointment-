@@ -47,7 +47,7 @@ export class DocViewAppt extends Component {
                 align='center'
                 flex={false}
             >
-                <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>BookMyVaccine</Heading></a>
+                <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>EZClinic</Heading></a>
             </Box>
         );
 

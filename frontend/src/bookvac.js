@@ -206,33 +206,104 @@ const ConcernsTextArea = () => {
   );
 };
 
+const Pincode = () => {
+  const [value, setValue] = React.useState("");
 
-function DoctorsDropdown() {
+  const onChange = event => {
+    setValue(event.target.value);
+    theConcerns = event.target.value;
+  };
+
+  return (
+    <Grommet theme={theme}>
+      <Box
+        width="medium"
+        height="xxsmall"
+      >
+      <TextArea
+        placeholder="Enter pincode..."
+        value={value}
+        onChange={onChange}
+        fill
+        required />
+      </Box>
+    </Grommet>
+  );
+};
+
+const Adharno = () => {
+  const [value, setValue] = React.useState("");
+
+  const onChange = event => {
+    setValue(event.target.value);
+    theConcerns = event.target.value;
+  };
+
+  return (
+    <Grommet theme={theme}>
+      <Box
+        width="medium"
+        height="xxsmall"
+      >
+      <TextArea
+        placeholder="Enter Aadhaar Number ..."
+        value={value}
+        onChange={onChange}
+        fill
+        required />
+      </Box>
+    </Grommet>
+  );
+};
+
+const Phoneno = () => {
+  const [value, setValue] = React.useState("");
+
+  const onChange = event => {
+    setValue(event.target.value);
+    theConcerns = event.target.value;
+  };
+
+  return (
+    <Grommet theme={theme}>
+      <Box
+        width="medium"
+        height="xxsmall"
+      >
+      <TextArea
+        placeholder="Enter Phone Number ..."
+        value={value}
+        onChange={onChange}
+        fill
+        required />
+      </Box>
+    </Grommet>
+  );
+};
+
+
+function VaccineDropdown() {
   const [value, setValue] = useState();
-  const [doctorsList, setList] = useState([]);
+  const [vaccineList, setList] = useState([]);
   useEffect(() => {    
-    fetch("http://localhost:3001/docInfo")
+    fetch("http://localhost:3001/vaccine")
     .then(res => res.json())
     .then(res => {
       let arr = []
       res.data.forEach(i => {
-        let tmp = `${i.name} (${i.email})`;
+        let tmp = `${i.vacname} (${i.about})`;
         arr.push(tmp);
       });
       setList(arr);
     });
   }, []);
-  const onChange = event => {
-    setValue(event.value);
-    let doc = event.value.match(/\((.*)\)/)[1];
-    theDoc = doc;
-  };
+ 
   return (
     <Select
-      options={doctorsList}
+    options={['Covaxin', 'Covisheild']}
       value={value}
       placeholder="Select Vaccine"
-      onChange={onChange} fill
+      
       required
     />
   );
@@ -241,11 +312,12 @@ function DoctorsDropdown() {
 export class Bookvac extends Component {
   constuctor() {
   }
+  
   render() {
     return (
       <Grommet theme={theme} full>
         <AppBar>
-        <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>BookMyVaccine</Heading></a>
+        <a style={{ color: 'inherit', textDecoration: 'inherit'}} href="/"><Heading level='3' margin='none'>EZClinic</Heading></a>
         </AppBar>
         <Box align="center" pad="small" gap="small">
           <Form
@@ -262,7 +334,7 @@ export class Bookvac extends Component {
                     .then(res => {
                       console.log(res)
                       if ((res.data[0])) {
-                        window.alert("Appointment Clash! Try another doctor or date/time");
+                        window.alert("Vaccine successfully booked!");
                       } else {
                         fetch("http://localhost:3001/genApptUID")
                           .then(res => res.json())
@@ -276,7 +348,7 @@ export class Bookvac extends Component {
                               "&id=" + gen_uid + "&doc=" + theDoc).then((x)=>{
                               fetch("http://localhost:3001/addToPatientSeeAppt?email=" + email_in_use + "&id=" + gen_uid +
                                 "&concerns=" + theConcerns + "&symptoms=" + theSymptoms).then((x)=>{
-                                  window.alert("Appointment successfully scheduled!");
+                                  window.alert("Vaccine successfully booked!");
                                 });
                             })
                           });
@@ -286,12 +358,31 @@ export class Bookvac extends Component {
             }}
           >
             <Box align="center" gap="small">
-              <DoctorsDropdown />
+              <VaccineDropdown />
             </Box>
             <DateTimeDropButton>
             </DateTimeDropButton>
+
+            <Select
+            placeholder="Age"
+            options={['18-45', '45+']}
+            />
+            <br/><br/>
+            <Select
+            placeholder="Infected By COVID19 ?"
+            options={['Yes', 'No']}
+            />
+            
+            <br/>
+            <br/>
             <ConcernsTextArea />
+            <br/>
+            <Pincode/>
             <br />
+            <Adharno/>
+            <br/>
+            <Phoneno/>
+            <br/>
             <br />
             <Box align="center" pad="small" gap="small">
               <Button
